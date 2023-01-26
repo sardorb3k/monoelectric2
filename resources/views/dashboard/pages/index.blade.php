@@ -40,7 +40,6 @@
                     <div class="nk-tb-list nk-tb-ulist is-compact">
                         <div class="nk-tb-item nk-tb-head">
                             <div class="nk-tb-col"><span class="sub-text">Name</span></div>
-                            <div class="nk-tb-col"><span class="sub-text">Status</span></div>
                             <div class="nk-tb-col nk-tb-col-tools text-end"> </div>
                         </div><!-- .nk-tb-item -->
                         @foreach ($pages as $page)

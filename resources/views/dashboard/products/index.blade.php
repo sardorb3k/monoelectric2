@@ -40,16 +40,17 @@
                     <div class="nk-tb-list nk-tb-ulist is-compact">
                         <div class="nk-tb-item nk-tb-head">
                             <div class="nk-tb-col"><span class="sub-text">Name</span></div>
-                            <div class="nk-tb-col nk-tb-col-tools text-end"> </div>
                         </div><!-- .nk-tb-item -->
-                        @foreach ($pages as $page)
+                        @foreach ($data as $page)
                             <div class="nk-tb-item">
                                 <div class="nk-tb-col">
                                     <div class="user-card">
                                         <div class="user-name">
                                             <a href="{{ route('dashboard.products.show', $page->id) }}">
                                                 <span class="tb-lead">
-                                                    {{ $page->name  }}
+                                                    {{ App::getLocale() == 'en' ? $page->name_en : '' }}
+                                                    {{ App::getLocale() == 'ru' ? $page->name_ru : '' }}
+                                                    {{ App::getLocale() == 'tr' ? $page->name_tr : '' }}
                                                 </span></a>
                                         </div>
                                     </div>
@@ -58,7 +59,7 @@
                         @endforeach
                     </div><!-- .nk-tb-list -->
                 </div><!-- .card-inner -->
-                {{ $pages->links() }}
+                {{ $data->links() }}
             </div><!-- .card-inner-group -->
         </div><!-- .card -->
     </div><!-- .nk-block -->

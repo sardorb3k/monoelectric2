@@ -24,6 +24,7 @@ Route::post('/contact', [App\Http\Controllers\ContactController::class, 'contact
 // Products
 Route::get('/our-products', [App\Http\Controllers\ProductsController::class, 'our_products'])->name('our_products');
 Route::get('/our-products/{id}', [App\Http\Controllers\ProductsController::class, 'our_product_show'])->name('our_products.show');
+Route::get('/our-products/category/{id}', [App\Http\Controllers\ProductsController::class, 'our_product_category_show'])->name('our_products.show');
 Route::get('/job-application', [App\Http\Controllers\ContactController::class, 'jobapplication'])->name('jobapplication');
 Route::post('/job-application', [App\Http\Controllers\ContactController::class, 'jobs_store'])->name('jobs.form');
 Route::get('/dealer-request', [App\Http\Controllers\ContactController::class, 'dealerrequest'])->name('dealrerequest');

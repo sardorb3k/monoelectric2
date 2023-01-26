@@ -14,13 +14,12 @@ class ProductsController extends Controller
     public function __construct(Product $pages)
     {
         $this->pages = $pages;
-        // $this->middleware('auth');
     }
 
     // home - Our products
     public function our_products()
     {
-        $products = $this->pages->get();
+        $products = $this->pages->paginate(10);
         $category = Category::get();
         $colors = Colors::get();
         return view('products.index',compact('products', 'category', 'colors'));
@@ -31,8 +30,21 @@ class ProductsController extends Controller
     {
         try {
             $product = $this->pages->find($id);
-            $products = $this->pages->where('category_id',$product->category_id)->get();
+            $products = $this->pages->where('category_id',$product->category_id)->paginate(4);
             return view('products.show', compact('product','products'));
+        } catch (\Throwable $th) {
+            return abort('404');
+        }
+    }
+
+    // Category
+    public function our_product_category_show($id)
+    {
+        try {
+            $products = $this->pages->where('category_id',$id)->paginate(10);
+            $category = Category::get();
+            $colors = Colors::get();
+            return view('products.index',compact('products', 'category', 'colors'));
         } catch (\Throwable $th) {
             return abort('404');
         }
@@ -40,14 +52,16 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $pages = $this->pages->paginate(10);
-        return view('dashboard.products.index', compact('pages'));
+        $data = $this->pages->paginate(10);
+        return view('dashboard.products.index', compact('data'));
     }
 
     public function show($id)
     {
         $product = $this->pages->where('id', $id)->first();
-        return view('dashboard.products.show', compact('product'));
+        $category = Category::get();
+        $colors = Colors::get();
+        return view('dashboard.products.show', compact('product','category', 'colors'));
     }
 
     public function create()
@@ -98,7 +112,7 @@ class ProductsController extends Controller
     {
         try {
             $request->validate([
-                'name' => 'required',
+                'name' => 'nullable',
                 'image' => 'nullable',
                 'file' => 'nullable',
             ]);
@@ -124,8 +138,8 @@ class ProductsController extends Controller
 
             return redirect()->route('dashboard.products.index')->with('success', 'products updated successfully.');
         } catch (\Exception $e) {
-            dd($e);
             return redirect()->route('dashboard.products.index')->with('error', 'products not updated.');
+            dd($e);
         }
     }
 

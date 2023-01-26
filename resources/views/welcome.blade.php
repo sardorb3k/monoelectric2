@@ -7,19 +7,19 @@
       <div class="slide">
         <picture class="img--holder"
           ><source
-            srcset="images/mainslide-01-sm.jpg"
+            srcset="images/mainslide-01.jpg"
             media="(max-width: 767px)"
             type="image/jpg" />
           <source
-            srcset="images/mainslide-01-sm.jpg"
+            srcset="images/mainslide-01.jpg"
             media="(max-width: 767px)"
             type="image/jpg" />
           <source
-            srcset="images/mainslide-01-md.jpg"
+            srcset="images/mainslide-01.jpg"
             media="(max-width: 1024px)"
             type="image/jpg" />
           <source
-            srcset="images/mainslide-01-md.jpg"
+            srcset="images/mainslide-01.jpg"
             media="(max-width: 1024px)"
             type="image/jpg" />
           <source srcset="images/mainslide-01.jpg" type="image/jpg" />
@@ -42,19 +42,19 @@
       <div class="slide">
         <picture class="img--holder"
           ><source
-            srcset="images/mainslide-02-sm.jpg"
+            srcset="images/mainslide-02.jpg"
             media="(max-width: 767px)"
             type="image/jpg" />
           <source
-            srcset="images/mainslide-02-sm.jpg"
+            srcset="images/mainslide-02.jpg"
             media="(max-width: 767px)"
             type="image/jpg" />
           <source
-            srcset="images/mainslide-02-md.jpg"
+            srcset="images/mainslide-02.jpg"
             media="(max-width: 1024px)"
             type="image/jpg" />
           <source
-            srcset="images/mainslide-02-md.jpg"
+            srcset="images/mainslide-02.jpg"
             media="(max-width: 1024px)"
             type="image/jpg" />
           <source srcset="images/mainslide-02.jpg" type="image/jpg" />
@@ -77,19 +77,19 @@
       <div class="slide">
         <picture class="img--holder"
           ><source
-            srcset="images/mainslide-03-sm.jpg"
+            srcset="images/mainslide-03.jpg"
             media="(max-width: 767px)"
             type="image/jpg" />
           <source
-            srcset="images/mainslide-03-sm.jpg"
+            srcset="images/mainslide-03.jpg"
             media="(max-width: 767px)"
             type="image/jpg" />
           <source
-            srcset="images/mainslide-03-md.jpg"
+            srcset="images/mainslide-03.jpg"
             media="(max-width: 1024px)"
             type="image/jpg" />
           <source
-            srcset="images/mainslide-03-md.jpg"
+            srcset="images/mainslide-03.jpg"
             media="(max-width: 1024px)"
             type="image/jpg" />
           <source srcset="images/mainslide-03.jpg" type="image/jpg" />
@@ -145,19 +145,17 @@
           <div class="layout01__content-wrapper">
             <div class="section-title text-left">
               <div class="section-title__02">
-                MONO ELEKTRİK
+                {{ __('home.section_information_title') }}
               </div>
             </div>
             <p>
-                Mono Electric 2011 yılında 14.000 m² kapalı alanda kurulmuş İstanbul Hadımköydeki fabrikasında üretime başladı. Teknolojik yenilikleri yakından takip ederek sürekli gelişen Mono Electric, üretim süreçlerinin tamamında otomasyon yatırımları ile sektöründe öncü marka olmuştur. Sektöründe en yeni teknolojileri kullanan Mono Electric yüksek kalitede ürünler üretmektedir.
-                <br>
-                Mono Electric ürettiği tüm ürünlerde TSE, CE, TÜV Rheinland belgeleri alarak kalitesini tescillemiştir. Ayrıca tüm ürün dizaynlarını ve markalarını Türk Patent Enstitüsü tarafından dünyada 136 ülkede tescillendirmiştir. En modern teknolojik ekipmanlara sahip kalite labaratuvarlarında ISO 9001 kalite yönetim sistemine göre TSE, CE, TÜV Rheinland standartlarına göre ürettiği ürünlerin testlerini yapmaktadır.
+              {{ __('home.section_information_desc') }}
             </p>
             <div class="tt-data-info">
               <div class="tt-item">
                 <a href="{{ url('our-products') }}">
                 <button class="tt-btn btn__color01" type="submit">
-                    <span class="icon-lightning"></span>DAHA FAZLA</button>
+                    <span class="icon-lightning"></span>{{ __('home.section_information_button') }}</button>
                 </a>
               </div>
             </div>
@@ -169,7 +167,7 @@
   <div class="section-indent">
     <div class="container container-md-fluid">
       <div class="section-title max-width-01">
-        <div class="section-title__02">Our Projects</div>
+        <div class="section-title__02">{{ __('home.section_product') }}</div>
       </div>
       <div
         id="filter-layout"
@@ -188,7 +186,7 @@
         </div>
       @endforeach
         <div class="col-12 text-center tt-top-more" style="display: block">
-            <a href="{{ url('our-products/') }}" class="tt-link tt-link__lg">View all projects<span class="icon-arrowhead-pointing-to-the-right-1"></span></a>
+            <a href="{{ url('our-products/') }}" class="tt-link tt-link__lg">{{ __('home.section_product_button') }}<span class="icon-arrowhead-pointing-to-the-right-1"></span></a>
           </div>
       </div>
     </div>
@@ -206,10 +204,10 @@
           </div>
           <div class="tt-box01__description">
             <h4 class="tt-box01__title">
-                CATALOG
+              {{ __('home.section_catalog_title') }}
             </h4>
             <p>
-                You can download our online catalog for free by clicking the button below.
+              {{ __('home.section_catalog_desc') }}
             </p>
             <div class="tt-row-btn">
               <a
@@ -217,7 +215,7 @@
                 data-toggle="modal"
                 data-target="#modalMakeAppointment"
                 href="{{ url('uploads/mono-elektrik-fiyat-listesi.pdf') }}"
-                ><span class="icon-lightning"></span>Download</a
+                ><span class="icon-lightning"></span>{{ __('home.section_catalog_button') }}</a
               >
             </div>
           </div>
@@ -243,13 +241,7 @@
                 class="lazyload"
                 data-src="/images/slideinfo-marker.png"
                 alt="" /></span
-            ><span class="tt-text">INFORMATION CENTER</span>
-          </div>
-          <div class="tt-item__description">
-            We offer the highest level of responsiveness and reliability,
-            including on-line job management and reporting. Our highly
-            experienced contractors across the nation ensure that your
-            premises are always maintained and compliant.
+            ><span class="tt-text">{{ __('home.section_information_center') }}</span>
           </div>
           <div class="tt-item__btn"><a href="{{ url('/page/information-center') }}">+</a></div>
         </div>
@@ -270,13 +262,7 @@
                 class="lazyload"
                 data-src="/images/slideinfo-marker.png"
                 alt="" /></span
-            ><span class="tt-text">DEALER REQUEST FORM</span>
-          </div>
-          <div class="tt-item__description">
-            We offer the highest level of responsiveness and reliability,
-            including on-line job management and reporting. Our highly
-            experienced contractors across the nation ensure that your
-            premises are always maintained and compliant.
+            ><span class="tt-text">{{ __('home.section_information_dealer') }}</span>
           </div>
           <div class="tt-item__btn"><a href="{{ url('/page/dealer-request') }}">+</a></div>
         </div>

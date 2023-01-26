@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @if (App::getLocale() == 'en')
-    @section('title', 'a')
+    @section('title', 'Our products')
 @elseif (App::getLocale() == 'ru')
-    @section('title', 'a')
+    @section('title', 'Наши продукты')
 @else
-    @section('title', 'a')
+    @section('title', 'Bizim ürünlerimiz')
 @endif
 @section('content')
     <link rel="stylesheet" href="css/page__shop.css" />
@@ -28,7 +28,9 @@
                                 <nav class="nav-categories">
                                     <ul>
                                         @foreach ($category as $data)
-                                            <li><a href="#">{{ $data->name_tr }}</a></li>
+                                            <li><a
+                                                    href="{{ url('/our-products/category/' . $data->id) }}">{{ $data->name_tr }}</a>
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </nav>
@@ -44,12 +46,12 @@
                                 <div class="col-6 col-md-4 tt-col-item">
                                     <div class="tt-product">
                                         <div class="tt-product__img">
-                                            <a href="{{ url('our-products/'.$product->id) }}"><img src="{{ asset('uploads/' . $product->image) }}"
-                                                    alt="" /></a>
+                                            <a href="{{ url('our-products/' . $product->id) }}"><img
+                                                    src="{{ asset('uploads/' . $product->image) }}" alt="" /></a>
                                         </div>
                                         <div class="tt-product__description">
                                             <h2 class="tt-product__title">
-                                                <a href="{{ url('our-products/'.$product->id) }}">
+                                                <a href="{{ url('our-products/' . $product->id) }}">
                                                     @if (App::getLocale() == 'en')
                                                         {{ $product->name_en }}
                                                     @elseif (App::getLocale() == 'ru')
@@ -68,17 +70,12 @@
                                     </div>
                                 </div>
                             @empty
+                                No data
                             @endforelse
                         </div>
-                        {{-- <div class="tt-pagination">
-                            <ul>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">...</a></li>
-                                <li><a href="#">8</a></li>
-                            </ul>
-                        </div> --}}
+                        <div class="tt-pagination">
+                            {!! $products->links('pagination::default') !!}
+                        </div>
                     </div>
                 </div>
             </div>

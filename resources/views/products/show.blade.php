@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @if (App::getLocale() == 'en')
-    @section('title', 'a')
+    @section('title', $product->name_en)
 @elseif (App::getLocale() == 'ru')
-    @section('title', 'a')
+    @section('title', $product->name_ru)
 @else
-    @section('title', 'a')
+    @section('title', $product->name_tr)
 @endif
 @section('content')
     <link rel="stylesheet" href="/css/page__shop.css" />
@@ -55,22 +55,22 @@
                                 @endif
                             </h1>
                             <div class="tt-add-info">
-                                <b>Description</b>
+                                <b>{{ __('home.product_desc') }}</b>
                                 <ul>
                                     @if ($product->productcode)
-                                        <li>Product Code: <span>{{ $product->productcode }}</span></li>
+                                        <li>{{ __('home.product_desc_pcode') }} <span>{{ $product->productcode }}</span></li>
                                     @endif
                                     @if ($product->quantitybox)
-                                        <li>Quantity Box: <span>{{ $product->quantitybox }}</span></li>
+                                        <li>{{ __('home.product_desc_qbox') }} <span>{{ $product->quantitybox }}</span></li>
                                     @endif
                                     @if ($product->piecesinbox)
-                                        <li>Pieces in Box: <span>{{ $product->piecesinbox }}</span></li>
+                                        <li>{{ __('home.product_desc_pbox') }} <span>{{ $product->piecesinbox }}</span></li>
                                     @endif
                                     @if ($product->grossweight)
-                                        <li>Gross weight: <span>{{ $product->grossweight }}</span></li>
+                                        <li>{{ __('home.product_desc_gw') }} <span>{{ $product->grossweight }}</span></li>
                                     @endif
                                     @if ($product->volume)
-                                        <li>volume: <span>{{ $product->volume }}</span></li>
+                                        <li>{{ __('home.product_desc_v') }} <span>{{ $product->volume }}</span></li>
                                     @endif
                                 </ul>
                             </div>
@@ -83,7 +83,7 @@
       <div class="section-indent">
         <div class="container container-lg-fluid">
           <div class="section-title">
-            <div class="section-title__02">Similar Products</div>
+            <div class="section-title__02">{{ __('home.product_similar') }}</div>
           </div>
           <div
             class="carusel-product js-carusel-product slick-type01"
