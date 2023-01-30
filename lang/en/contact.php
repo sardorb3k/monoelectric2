@@ -47,4 +47,18 @@ return [
     'jobs_button' => 'Submit',
 
 
+    'contact_title' => 'Contact Form',
+    'contact_address' => 'Address:',
+    'contact_workhours' => 'Work Hours:',
+    'contact_phonenumber' => 'Phone Numbers:',
+    'contact_form_title' => 'Get In Touch with Us',
+    'contact_form_desc' => 'Are you stumped by a home wiring project or problem? Fill out the form with the details of your situation and we can come to your aid.',
+    'contact_yourname' => 'Your Name *',
+    'contact_email' => 'Your e-mail address *',
+    'contact_subject' => 'Subject *',
+    'contact_phonenumber' => 'Your phone number *',
+    'contact_message' => 'Qustion In Detail *',
+    'contact_policy' => 'All Electrical work must be done by a qualified licensed electrician.',
+    'contact_button' => 'Contact us',
+
 ];

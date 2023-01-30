@@ -1,11 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="tt-breadcrumb" style="background-image: url('images/breadcrumb_bg.jpg')">
+    <div class="container container-lg-fluid">
+        <ul>
+            <li><a href="index.html">{{ __('home.home') }}</a></li>
+            <li>{{ __('auth.login_title') }}</li>
+        </ul>
+    </div>
+</div>
+
+<main id="tt-pageContent">
+    <div class="section-indent">
+        <div class="container container-lg-fluid">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <h1 class="text-center">{{ __('auth.login_title') }}</h1>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -22,12 +34,9 @@
                                 @enderror
                             </div>
                         </div>
-
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="phone">{{ __('Password') }}</label>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
@@ -38,8 +47,8 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="col-12">
+                            <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -50,18 +59,12 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
+
+
+                        <div class="col-12">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
                         </div>
                     </form>
                 </div>
@@ -69,4 +72,10 @@
         </div>
     </div>
 </div>
+        </div>
+    </div>
+
+
+
+</main>
 @endsection

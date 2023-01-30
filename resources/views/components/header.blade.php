@@ -38,7 +38,7 @@
                     <span class="icon-clock-circular-outline-1"></span>
                 </div>
                 <div class="tt-item__text">
-                    Mon-Fri 08:00 AM - 05:00 PM, Sat-Sun
+                    Mon-Fri 07:45 AM - 05:45 PM, Sat-Sun
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                         </div> --}}
                         <div class="tt-item">
                             <span class="icon-clock-circular-outline-1"></span>Mon-Fri
-                            08:00 AM - 05:00 PM
+                            07:45 AM - 05:45 PM
                         </div>
                     </div>
                 </div>
