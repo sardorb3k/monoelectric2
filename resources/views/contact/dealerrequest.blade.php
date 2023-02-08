@@ -19,42 +19,62 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <form action="{{ route('dealrerequest.form') }}" class="form-default" method="post"
-                            novalidate="novalidate">
+                        <form action="{{ route('dealrerequest.form') }}" class="form-default" method="post">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="dealername" class="form-control"
+                                <p>{{ __('contact.dealer_name') }}</p>
+                                <input type="text" name="dealername" class="form-control" required
                                     placeholder="{{ __('contact.dealer_name') }} *">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="address" class="form-control" placeholder="{{ __('contact.dealer_address') }} *">
+                                <p>{{ __('contact.dealer_address') }}</p>
+                                <input type="text" name="address" class="form-control"  required
+                                    placeholder="{{ __('contact.dealer_address') }} *">
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="{{ __('contact.dealer_email') }} *">
+                                <p>{{ __('contact.dealer_email') }}</p> 
+                                <input type="email" name="email" class="form-control" required
+                                    placeholder="{{ __('contact.dealer_email') }} *">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="phone" class="form-control" placeholder="{{ __('contact.dealer_phone') }} *">
+                                <p>{{ __('contact.dealer_phone') }}</p>
+                                <input type="text" name="phone" class="form-control" required
+                                    placeholder="{{ __('contact.dealer_phone') }} *">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="gsm" class="form-control" placeholder="{{ __('contact.dealer_gsm') }} *">
+                                <p>{{ __('contact.dealer_gsm') }}</p>
+                                <input type="text" name="gsm" class="form-control" required
+                                    placeholder="{{ __('contact.dealer_gsm') }} *">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="faks" class="form-control" placeholder="{{ __('contact.dealer_faks') }} *">
+                                <p>{{ __('contact.dealer_faks') }}</p>
+                                <input type="text" name="faks" class="form-control" required
+                                    placeholder="{{ __('contact.dealer_faks') }} *">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="taxadministration" class="form-control" placeholder="{{ __('contact.dealer_taxadministration') }} *">
+                                <p>{{ __('contact.dealer_taxadministration') }}</p>
+                                <input type="text" name="taxadministration" class="form-control" required
+                                    placeholder="{{ __('contact.dealer_taxadministration') }} *">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="taxnumber" class="form-control" placeholder="{{ __('contact.dealer_taxnumber') }} *">
+                                <p>{{ __('contact.dealer_taxnumber') }}</p>
+                                <input type="text" name="taxnumber" class="form-control" required
+                                    placeholder="{{ __('contact.dealer_taxnumber') }} *">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="website" class="form-control" placeholder="{{ __('contact.dealer_website') }} *">
+                                <p>{{ __('contact.dealer_website') }}</p>
+                                <input type="text" name="website" class="form-control" required
+                                    placeholder="{{ __('contact.dealer_website') }} *">
                             </div>
                             <div class="form-group">
-                                <textarea name="shippingaddress" class="form-control" rows="4" placeholder="{{ __('contact.dealer_address') }} *"></textarea>
+                                <p>{{ __('contact.dealer_address') }}</p>
+                                <textarea name="shippingaddress" class="form-control" rows="4" required
+                                    placeholder="{{ __('contact.dealer_address') }} *"></textarea>
                             </div>
                             <div class="form-group">
-                                <textarea name="addresspayment" class="form-control" rows="4" placeholder="{{ __('contact.dealer_addresspayment') }} *"></textarea>
+                                <p>{{ __('contact.dealer_addresspayment') }}</p>
+                                <textarea name="addresspayment" class="form-control" rows="4" required
+                                    placeholder="{{ __('contact.dealer_addresspayment') }} *"></textarea>
                             </div>
                             {{-- <div class="form-group">
                                 <div class="tt-notes text-center">
@@ -63,7 +83,8 @@
                                 </div>
                             </div> --}}
                             @if (session('success') || session('error'))
-                                <div class="alert @if (session('error')) alert-error @endif shadow-lg">
+                                <div
+                                    class="alert @if (session('error')) alert-error @endif @if (session('success')) alert-success @endif shadow-lg">
                                     <div>
                                         <span>{{ session('success') }} {{ session('error') }}</span>
                                     </div>

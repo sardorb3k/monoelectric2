@@ -1,4 +1,20 @@
-@charset "UTF-8";:root{--default_font:'Roboto',sans-serif;--default_font2:'Poppins',sans-serif;--default_font_icon:'electrician';--default_bg_color:#ffffff;--default_text_color:#7b7b7b;--default_color:#005e9b;--default_color02:#303442;--default_color03:#a0a0a0;--link_color_base:var(--default_color);--speed:0.2s;--border:#e9e9eb;--border_small:2px;--radius:4px}/*!
+@charset "UTF-8";:root{--default_font:'Roboto',sans-serif;--default_font2:'Poppins',sans-serif;--default_font_icon:'electrician';--default_bg_color:#ffffff;--default_text_color:#7b7b7b;--default_color:#005e9b;--default_color02:#303442;--default_color03:#a0a0a0;--link_color_base:var(--default_color);--speed:0.2s;--border:#e9e9eb;--border_small:2px;--radius:4px}
+
+.alert-error {
+    background: #f8d7da;
+    padding: 1rem;
+    border-color: #f1aeb5;
+    color: #b02a37;
+    border-radius: 0.375rem;
+}
+.alert-success {
+    background: #f8d7da;
+    padding: 1rem;
+    border-color: #f1aeb5;
+    color: #146c43;
+    border-radius: 0.375rem;
+}
+/*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.

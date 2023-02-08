@@ -21,8 +21,8 @@
                                 <span class="preview-title-lg overline-title">Name</span>
                                 <div class="form-control-wrap">
                                     <div id="pagename_uz">
-                                        <input type="text" class="form-control @error('title') error @enderror" value="{{ $product->name_en }}"
-                                            id="page-name" name="name" required>
+                                        <input type="text" class="form-control @error('title') error @enderror"
+                                            value="{{ $product->name_en }}" id="page-name" name="name" required>
                                     </div>
                                 </div>
                             </div>
@@ -31,8 +31,8 @@
                             <div class="form-group">
                                 <div class="form-control-wrap">
                                     <span class="preview-title-lg overline-title">Product code</span>
-                                    <input type="text" class="form-control @error('title') error @enderror" value="{{ $product->productcode }}"
-                                        id="productcode" name="productcode" required>
+                                    <input type="text" class="form-control @error('title') error @enderror"
+                                        value="{{ $product->productcode }}" id="productcode" name="productcode" required>
                                 </div>
                             </div>
                         </div>
@@ -40,8 +40,8 @@
                             <div class="form-group">
                                 <div class="form-control-wrap">
                                     <span class="preview-title-lg overline-title">quantity box</span>
-                                    <input type="text" class="form-control @error('title') error @enderror" value="{{ $product->quantitybox }}"
-                                        id="quantitybox" name="quantitybox" required>
+                                    <input type="text" class="form-control @error('title') error @enderror"
+                                        value="{{ $product->quantitybox }}" id="quantitybox" name="quantitybox" required>
                                 </div>
                             </div>
                         </div>
@@ -49,8 +49,8 @@
                             <div class="form-group">
                                 <div class="form-control-wrap">
                                     <span class="preview-title-lg overline-title">pieces in box</span>
-                                    <input type="text" class="form-control @error('title') error @enderror" value="{{ $product->piecesinbox }}"
-                                        id="piecesinbox" name="piecesinbox" required>
+                                    <input type="text" class="form-control @error('title') error @enderror"
+                                        value="{{ $product->piecesinbox }}" id="piecesinbox" name="piecesinbox" required>
                                 </div>
                             </div>
                         </div>
@@ -58,8 +58,8 @@
                             <div class="form-group">
                                 <span class="preview-title-lg overline-title">gross weight</span>
                                 <div class="form-control-wrap">
-                                    <input type="text" class="form-control @error('title') error @enderror" value="{{ $product->grossweight }}"
-                                        id="grossweight" name="grossweight" required>
+                                    <input type="text" class="form-control @error('title') error @enderror"
+                                        value="{{ $product->grossweight }}" id="grossweight" name="grossweight" required>
                                 </div>
                             </div>
                         </div>
@@ -67,19 +67,21 @@
                             <div class="form-group">
                                 <span class="preview-title-lg overline-title">volume</span>
                                 <div class="form-control-wrap">
-                                    <input type="text" class="form-control @error('title') error @enderror" value="{{ $product->volume }}"
-                                        id="volume" name="volume" required>
+                                    <input type="text" class="form-control @error('title') error @enderror"
+                                        value="{{ $product->volume }}" id="volume" name="volume" required>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
+                                <label class="form-label" for="category">Category</label>
                                 <div class="form-control-wrap ">
                                     <div class="form-control-select">
-                                        <label class="form-label" for="category">Category</label>
                                         <select class="form-control" id="category">
                                             @forelse ($category as $data_c)
-                                                <option value="{{ $data_c->id }}" {{ $data_c->id == $product->category_id ? 'selected' : '' }}>{{ $data_c->name_en }}</option>
+                                                <option value="{{ $data_c->id }}"
+                                                    {{ $data_c->id == $product->category_id ? 'selected' : '' }}>
+                                                    {{ $data_c->name_en }}</option>
                                             @empty
                                                 <option>No</option>
                                             @endforelse

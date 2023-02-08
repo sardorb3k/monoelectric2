@@ -44,6 +44,7 @@ return [
     'jobs_email' => 'Your e-mail address',
     'jobs_phone' => 'Your phone number',
     'jobs_textarea' => 'Detail',
+    'jobs_file' => 'Add file',
     'jobs_button' => 'Submit',
 
 

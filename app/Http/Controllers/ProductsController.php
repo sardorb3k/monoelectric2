@@ -73,11 +73,18 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         try {
             $request->validate([
                 'name' => 'required',
+                'productcode' => 'required',
+                'quantitybox' => 'required',
+                'piecesinbox' => 'required',
+                'grossweight' => 'required',
+                'volume' => 'required',
+                'category' => 'required',
+                'colors' => 'required',
                 'image' => 'required',
-                'file' => 'required',
             ]);
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
@@ -85,21 +92,21 @@ class ProductsController extends Controller
                 $destinationPath = public_path('/uploads');
                 $image->move($destinationPath, $imagename);
             }
-            if ($request->hasFile('file')) {
-                $image = $request->file('file');
-                $file = time() .'fl.'. $image->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads');
-                $image->move($destinationPath, $file);
-            }
             $this->pages->create([
-                'name' => $request->name,
+                'name_en' => $request->name,
+                'productcode' => $request->productcode,
+                'quantitybox' => $request->quantitybox,
+                'piecesinbox' => $request->piecesinbox,
+                'grossweight' => $request->grossweight,
+                'volume' => $request->volume,
+                'category_id' => $request->category,
+                'color_id' => $request->colors,
                 'image' => $imagename,
-                'file' => $file,
             ]);
-            return redirect()->route('dashboard.products.index')->with('success', 'Page created successfully');
+            return redirect()->route('dashboard.products.index')->with('success', 'Product created successfully');
         } catch (\Exception $e) {
             dd($e);
-            return redirect()->route('dashboard.products.index')->with('error', 'Error creating page');
+            return redirect()->route('dashboard.products.index')->with('error', 'Error creating Product');
         }
     }
 

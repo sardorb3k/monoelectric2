@@ -36,29 +36,42 @@
                         </div><!-- .card-tools -->
                     </div>
                 </div><!-- .card-inner -->
-                <div class="card-inner p-0">
-                    <div class="nk-tb-list nk-tb-ulist is-compact">
-                        <div class="nk-tb-item nk-tb-head">
-                            <div class="nk-tb-col"><span class="sub-text">Name</span></div>
-                        </div><!-- .nk-tb-item -->
-                        @foreach ($data as $page)
-                            <div class="nk-tb-item">
-                                <div class="nk-tb-col">
-                                    <div class="user-card">
-                                        <div class="user-name">
-                                            <a href="{{ route('dashboard.products.show', $page->id) }}">
+                
+                <div class="card card-bordered card-preview">
+                    <div class="card-inner">
+                        <table class="datatable-init nk-tb-list nk-tb-ulist" data-auto-responsive="false">
+                            <thead>
+                                <tr class="nk-tb-item nk-tb-head">
+                                    <th class="nk-tb-col"><span class="sub-text">Name</span></th>
+                                    <th class="nk-tb-col tb-col-mb"><span class="sub-text">Product code</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $page)
+                                <tr class="nk-tb-item" onclick="window.location.href='{{ route('dashboard.products.show', $page->id) }}'">
+                                    <td class="nk-tb-col">
+                                        <div class="user-card">
+                                            <div class="user-avatar bg-dim-primary d-none d-sm-flex">
+                                                <span><img src="{{ url('uploads/'.$page->image) }} "
+                                                    alt="{{ $page->name_en }}"></span>
+                                            </div>
+                                            <div class="user-info">
                                                 <span class="tb-lead">
                                                     {{ App::getLocale() == 'en' ? $page->name_en : '' }}
                                                     {{ App::getLocale() == 'ru' ? $page->name_ru : '' }}
-                                                    {{ App::getLocale() == 'tr' ? $page->name_tr : '' }}
-                                                </span></a>
+                                                    {{ App::getLocale() == 'tr' ? $page->name_tr : '' }}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div><!-- .nk-tb-item -->
-                        @endforeach
-                    </div><!-- .nk-tb-list -->
-                </div><!-- .card-inner -->
+                                    </td>
+                                    <td class="nk-tb-col tb-col-mb" data-order="{{ $page->productcode }}">
+                                        <span class="tb-amount">{{ $page->productcode }}</span>
+                                    </td>
+                                </tr><!-- .nk-tb-item  -->
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- .card-preview -->
                 {{ $data->links() }}
             </div><!-- .card-inner-group -->
         </div><!-- .card -->

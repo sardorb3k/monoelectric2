@@ -74,20 +74,19 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <form action="{{ route('contact.form') }}" class="form-default" method="post"
-                            novalidate="novalidate">
+                        <form action="{{ route('contact.form') }}" class="form-default" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="name" class="form-control"
-                                            placeholder="{{ __('contact.contact_yourname') }}" />
+                                            placeholder="{{ __('contact.contact_yourname') }}" required/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="email" class="form-control"
-                                            placeholder="{{ __('contact.contact_email') }}" />
+                                            placeholder="{{ __('contact.contact_email') }}" required/>
                                     </div>
                                 </div>
                             </div>
@@ -95,27 +94,31 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="subject" class="form-control"
-                                            placeholder="{{ __('contact.contact_subject') }}" />
+                                            placeholder="{{ __('contact.contact_subject') }}" required/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="phonenumber" class="form-control"
-                                            placeholder="{{ __('contact.contact_phonenumber') }}" />
+                                            placeholder="{{ __('contact.contact_phonenumber') }}" required />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea name="message" class="form-control" rows="4" placeholder="{{ __('contact.contact_message') }}"></textarea>
+                                <textarea name="message" class="form-control" rows="4" placeholder="{{ __('contact.contact_message') }}" required></textarea>
                             </div>
                             <div class="form-group">
                                 <div class="tt-notes text-center">
                                     {{ __('contact.contact_policy') }}
                                 </div>
                             </div>
+
                             @if (session('success') || session('error'))
-                                <div class="alert @if (session('error')) alert-danger @endif @if (session('success')) alert-success @endif" role="alert">
-                                    {{ session('success') }} {{ session('error') }}
+                                <div
+                                    class="alert @if (session('error')) alert-error @endif @if (session('success')) alert-success @endif shadow-lg">
+                                    <div>
+                                        <span>{{ session('success') }} {{ session('error') }}</span>
+                                    </div>
                                 </div>
                             @endif
                             <div class="form-group text-center">
@@ -128,7 +131,7 @@
                     </div>
                 </div>
             </div>
-            <style>
+            {{-- <style>
                 .alert-danger {
                     color: #721c24;
                     background-color: #f8d7da;
@@ -148,7 +151,7 @@
                     background-color: #d4edda;
                     border-color: #c3e6cb;
                 }
-            </style>
+            </style> --}}
         </div>
     </main>
 @endsection

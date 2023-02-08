@@ -73,10 +73,10 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
+                                <label class="form-label" for="category">Category</label>
                                 <div class="form-control-wrap ">
                                     <div class="form-control-select">
-                                        <label class="form-label" for="category">Category</label>
-                                        <select class="form-control" id="category">
+                                        <select class="form-control" name="category" id="category">
                                             @forelse ($category as $data_c)
                                                 <option value="{{ $data_c->id }}">{{ $data_c->name_en }}</option>
                                             @empty
@@ -93,7 +93,7 @@
                                 <div class="form-control-wrap ">
                                     <label class="form-label" for="colors">Colors</label>
                                     <div class="form-control-select">
-                                        <select class="form-control" id="colors">
+                                        <select class="form-control" id="colors" name="colors">
                                             @forelse ($colors as $data)
                                                 <option value="{{ $data->id }}">{{ $data->name_en }}</option>
                                             @empty
