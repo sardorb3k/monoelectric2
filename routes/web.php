@@ -40,6 +40,7 @@ Route::group(['as' => 'dashboard.', 'prefix' => 'dashboard'], function () {
     // Pages Routes
     Route::resource('pages', App\Http\Controllers\PagesController::class);
     Route::resource('products', App\Http\Controllers\ProductsController::class);
+    Route::resource('category', App\Http\Controllers\CategoryController::class);
     // contact
     Route::get('/contact', 'App\Http\Controllers\ContactController@dashboard_contact')->name('contact.index');
     Route::get('/contact/{id}', 'App\Http\Controllers\ContactController@dashboard_contact_show')->name('contact.show');

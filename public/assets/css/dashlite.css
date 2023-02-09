@@ -2776,13 +2776,13 @@ div.dataTables_wrapper div.dataTables_filter .form-floating > input:not(:placeho
 
 .btn-primary {
   color: #fff;
-  background-color: #92210f;
-  border-color: #9d4031;
+  background-color: #0088cc;
+  border-color: #0088cc;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #9b220f;
-  border-color: #933c2d;
+  background-color: #0af;
+  border-color: #0af;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
@@ -14020,7 +14020,7 @@ a:hover .btn-trigger:before {
   }
 }
 .dropdown-menu-s1 {
-  border-top: 3px solid #92210f;
+  border-top: 3px solid #00aaff;
 }
 
 .dropdown-toggle-split > .icon {
@@ -28353,8 +28353,8 @@ body.nav-shown {
   background: #fff;
 }
 .nk-header.is-theme:not([class*=bg-]) {
-  background: #92210f;
-  border-color: #9d4031;
+  background: #0088cc;
+  border-color: #0088cc;
 }
 .nk-header-fixed {
   position: fixed;
@@ -30691,7 +30691,7 @@ h6 .badge, .h6 .badge {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #92210f;
+  color: #0088cc;
   background: #fff;
   font-size: 14px;
   font-weight: 500;
@@ -40824,7 +40824,7 @@ body.dark-mode.nk-body.ui-softy, body.dark-mode.nk-body.ui-shady {
   box-shadow: 0 3px 20px 1px rgba(0, 0, 0, 0.4);
 }
 .dark-mode .dropdown-menu-s1 {
-  border-top-color: #6576ff;
+  border-top-color: #07acff;
 }
 .dark-mode .link-list-plain a, .dark-mode .link-list-opt a, .dark-mode .link-check li a {
   color: #b6c6e3;

@@ -1,10 +1,10 @@
 @extends('layouts.dashboard')
-@section('title', 'Jobs Application')
+@section('title', __('dashboard.jobs_title'))
 @section('content')
     <div class="nk-block-head">
         <div class="nk-block-between g-3">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">Jobs Application <strong class="text-primary small">#{{ $jobs->id }}</strong>
+                <h3 class="nk-block-title page-title">{{ __('dashboard.jobs_title') }} <strong class="text-primary small">#{{ $jobs->id }}</strong>
                 </h3>
                 <div class="nk-block-des text-soft">
                     <ul class="list-inline">
@@ -26,16 +26,16 @@
                 <div class="invoice-head">
                     <div class="invoice-desc" style="width: 100%;">
                         <ul class="list-plain">
-                            <li class="invoice-id"><span>TC ID</span>:<span>{{ $jobs->tcidnumber }}</span></li>
-                            <li class="invoice-id"><span>Firstname</span>:<span>{{ $jobs->firstname }}</span></li>
-                            <li class="invoice-id"><span>Lastname</span>:<span>{{ $jobs->lastname }}</span></li>
-                            <li class="invoice-id"><span>Birthdate</span>:<span>{{ $jobs->birthdate }}</span></li>
-                            <li class="invoice-id"><span>Gender</span>:<span>{{ $jobs->gender }}</span></li>
-                            <li class="invoice-id"><span>Married</span>:<span>{{ $jobs->married }}</span></li>
-                            <li class="invoice-id"><span>License</span>:<span>{{ $jobs->license }}</span></li>
-                            <li class="invoice-id"><span>Email</span>:<span>{{ $jobs->email }}</span></li>
-                            <li class="invoice-id"><span>Phone</span>:<span>{{ $jobs->phone }}</span></li>
-                            <li class="invoice-id"><span>Message</span><br><span>{{ $jobs->message }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_tcnumber') }}</span>:<span>{{ $jobs->tcidnumber }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_firstname') }}</span>:<span>{{ $jobs->firstname }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_lastname') }}</span>:<span>{{ $jobs->lastname }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_birthdate') }}</span>:<span>{{ $jobs->birthdate }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_gender') }}</span>:<span>{{ $jobs->gender }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_married') }}</span>:<span>{{ $jobs->married }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_license') }}</span>:<span>{{ $jobs->license }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_email') }}</span>:<span>{{ $jobs->email }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_phone') }}</span>:<span>{{ $jobs->phone }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.jobs_message') }}</span><br><span>{{ $jobs->message }}</span></li>
                         </ul>
                     </div>
                 </div>

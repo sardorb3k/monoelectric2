@@ -14,7 +14,7 @@
     <script src="{{ asset('assets/js/jquery.inputmask.min.js') }}"></script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('logo.ico') }}">
     <!-- Title -->
     <title>@yield('title')</title>
 </head>

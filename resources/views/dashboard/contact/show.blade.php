@@ -4,7 +4,7 @@
     <div class="nk-block-head">
         <div class="nk-block-between g-3">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">Contact <strong class="text-primary small">#{{ $contact->id }}</strong>
+                <h3 class="nk-block-title page-title">{{ __('dashboard.contact_title') }} <strong class="text-primary small">#{{ $contact->id }}</strong>
                 </h3>
                 <div class="nk-block-des text-soft">
                     <ul class="list-inline">
@@ -26,11 +26,11 @@
                 <div class="invoice-head">
                     <div class="invoice-desc" style="width: 100%;">
                         <ul class="list-plain">
-                            <li class="invoice-id"><span>Fullname</span>:<span>{{ $contact->fullname }}</span></li>
-                            <li class="invoice-id"><span>Email</span>:<span>{{ $contact->email }}</span></li>
-                            <li class="invoice-id"><span>Phone</span>:<span>{{ $contact->phone }}</span></li>
-                            <li class="invoice-id"><span>Subject</span>:<span>{{ $contact->subject }}</span></li>
-                            <li class="invoice-id"><span>Message</span><br><span>{{ $contact->message }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.contact_fullname') }}</span>:<span>{{ $contact->fullname }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.contact_email') }}</span>:<span>{{ $contact->email }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.contact_phone') }}</span>:<span>{{ $contact->phone }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.contact_subject') }}</span>:<span>{{ $contact->subject }}</span></li>
+                            <li class="invoice-id"><span>{{ __('dashboard.contact_message') }}</span><br><span>{{ $contact->message }}</span></li>
                         </ul>
                     </div>
                 </div>

@@ -1,10 +1,10 @@
 @extends('layouts.dashboard')
-@section('title', 'Contact')
+@section('title', __('dashboard.jobs_title'))
 @section('content')
     <div class="nk-block-head nk-block-head-sm">
         <div class="nk-block-between">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">Contact</h3>
+                <h3 class="nk-block-title page-title">{{ __('dashboard.jobs_title') }}</h3>
             </div><!-- .nk-block-head-content -->
         </div><!-- .nk-block-between -->
     </div><!-- .nk-block-head -->
@@ -15,14 +15,14 @@
                 <div class="card-inner p-0">
                     <div class="nk-tb-list nk-tb-ulist is-compact">
                         <div class="nk-tb-item nk-tb-head">
-                            <div class="nk-tb-col"><span class="sub-text">TC number</span></div>
-                            <div class="nk-tb-col"><span class="sub-text">firstname</span></div>
-                            <div class="nk-tb-col"><span class="sub-text">lastname</span></div>
-                            <div class="nk-tb-col"><span class="sub-text">birthdate</span></div>
-                            <div class="nk-tb-col"><span class="sub-text">phone</span></div>
+                            <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.jobs_tcnumber') }}</span></div>
+                            <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.jobs_firstname') }}</span></div>
+                            <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.jobs_lastname') }}</span></div>
+                            <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.jobs_birthdate') }}</span></div>
+                            <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.jobs_phone') }}</span></div>
                         </div><!-- .nk-tb-item -->
                         @foreach ($jobs as $data)
-                            <div class="nk-tb-item">
+                            <div class="nk-tb-item" onclick="window.location.href='{{ url('dashboard/jobsapplication', $data->id) }}'">
                                 <div class="nk-tb-col">
                                     <div class="user-card">
                                         <div class="user-name">

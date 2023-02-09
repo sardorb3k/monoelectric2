@@ -7,10 +7,10 @@
                         </div>
                         <div class="nk-header-brand">
                             <a href="{{ url('/dashboard') }}" class="logo-link">
-                                <img class="logo-light logo-img" src="{{ asset('logo.png') }}"
-                                    srcset="{{ asset('logo.png') }}" alt="logo">
-                                <img class="logo-dark logo-img" src="{{ asset('logo.png') }}"
-                                    srcset="{{ asset('logo.png') }}" alt="logo-dark">
+                                <img class="logo-light logo-img" src="{{ asset('logo-black.png') }}"
+                                    srcset="{{ asset('logo-black.png') }}" alt="logo">
+                                <img class="logo-dark logo-img" src="{{ asset('logo-black.png') }}"
+                                    srcset="{{ asset('logo-black.png') }}" alt="logo-dark">
                             </a>
                         </div><!-- .nk-header-brand -->
                         <div class="nk-header-menu" data-content="headerNav">
@@ -72,6 +72,10 @@
                                             <li class="nk-menu-item">
                                                 <a href="{{ route('dashboard.products.index') }}" class="nk-menu-link"><span
                                                         class="nk-menu-text">Products</span></a>
+                                            </li>
+                                            <li class="nk-menu-item">
+                                                <a href="{{ route('dashboard.category.index') }}" class="nk-menu-link"><span
+                                                        class="nk-menu-text">Category</span></a>
                                             </li>
                                             {{-- <li class="nk-menu-item">
                                                 <a href="{{ url('/dashboard/system') }}" class="nk-menu-link"><span
