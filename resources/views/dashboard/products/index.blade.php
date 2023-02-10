@@ -44,12 +44,13 @@
                                 <tr class="nk-tb-item nk-tb-head">
                                     <th class="nk-tb-col"><span class="sub-text">Name</span></th>
                                     <th class="nk-tb-col tb-col-mb"><span class="sub-text">Product code</span></th>
+                                    <div class="nk-tb-col tb-col-mb"> </div>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($data as $page)
-                                <tr class="nk-tb-item" onclick="window.location.href='{{ route('dashboard.products.show', $page->id) }}'">
-                                    <td class="nk-tb-col">
+                                <tr class="nk-tb-item">
+                                    <td class="nk-tb-col" onclick="window.location.href='{{ route('dashboard.products.show', $page->id) }}'">
                                         <div class="user-card">
                                             <div class="user-avatar bg-dim-primary d-none d-sm-flex">
                                                 <span><img src="{{ url('uploads/'.$page->image) }} "
@@ -63,9 +64,21 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="nk-tb-col tb-col-mb" data-order="{{ $page->productcode }}">
+                                    <td class="nk-tb-col tb-col-mb" data-order="{{ $page->productcode }}" onclick="window.location.href='{{ route('dashboard.products.show', $page->id) }}'">
                                         <span class="tb-amount">{{ $page->productcode }}</span>
                                     </td>
+
+                                    <td class="nk-tb-col tb-col-mb" data-order="{{ $page->productcode }}" >
+                                    <form action="{{ route('dashboard.products.destroy', $page->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a href="#"
+                                            onclick="event.preventDefault();
+                                        this.closest('form').submit();"
+                                            class="btn btn-sm btn-icon btn-trigger"><em
+                                                class="icon ni ni-delete"></em></a>
+                                    </form>
+                                </td>
                                 </tr><!-- .nk-tb-item  -->
                                 @endforeach
                             </tbody>

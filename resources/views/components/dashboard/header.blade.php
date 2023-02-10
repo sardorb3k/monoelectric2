@@ -99,9 +99,9 @@
                                                 <em class="icon ni ni-user-alt"></em>
                                             </div>
                                             <div class="user-info d-none d-xl-block">
-                                                <div class="user-status">{{ Auth::user()->role }}</div>
+                                                <div class="user-status">{{ Auth::user()->phone }}</div>
                                                 <div class="user-name dropdown-indicator">
-                                                    {{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}
+                                                    {{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}
                                                 </div>
                                             </div>
                                         </div>
@@ -115,7 +115,7 @@
                                                 </div>
                                                 <div class="user-info">
                                                     <span
-                                                        class="lead-text">{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</span>
+                                                        class="lead-text">{{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}</span>
                                                     <span class="sub-text">{{ Auth::user()->phone }}</span>
                                                 </div>
                                             </div>

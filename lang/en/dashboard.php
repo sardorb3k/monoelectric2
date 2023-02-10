@@ -1,7 +1,8 @@
 <?php
 
 return [
-
+    'title' => 'Dashboard',
+    'profile_title' => 'Profile',
     'jobs_title' => 'Jobs application',
     'jobs_tcnumber' => 'TC number',
     'jobs_firstname' => 'First name',

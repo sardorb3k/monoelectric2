@@ -125,9 +125,10 @@ class ContactController extends Controller
             // PDF
             return redirect()->route('dealrerequest')->with('error', 'Done ');
         } catch (\Exception $e) {
-            return redirect()->route('dealrerequest')->with('error', 'Error creating page ');
+            return redirect()->route('dealrerequest')->with('error', 'Error ');
         }
     }
+
 
 
     // Dashboard
@@ -142,6 +143,16 @@ class ContactController extends Controller
         $contact = Contact::where('id', $id)->first();
         return view('dashboard.contact.show',compact('contact'));
     }
+    // dashboard_dealerrequest_destroy 
+    public function dashboard_contact_destroy(Request $request, $id){
+        try {
+            $page = Contact::find($id);
+            $page->delete();
+            return redirect()->route('dashboard.contact.index')->with('success', 'deleted successfully.');
+        }catch (\Exception $e) {
+            return redirect()->route('dashboard.contact.index')->with('error', 'Error ');
+        }
+    }
     // Jobs application
 
     public function dashboard_jobsapplication()
@@ -154,7 +165,16 @@ class ContactController extends Controller
         $jobs = JobsApplication::where('id', $id)->first();
         return view('dashboard.jobsapplication.show',compact('jobs'));
     }
-    // Dealer request
+    // dashboard_dealerrequest_destroy 
+    public function dashboard_jobsapplication_destroy(Request $request, $id){
+        try {
+            $page = JobsApplication::find($id);
+            $page->delete();
+            return redirect()->route('dashboard.jobsapplication.index')->with('success', 'deleted successfully.');
+        }catch (\Exception $e) {
+            return redirect()->route('dashboard.jobsapplication.index')->with('error', 'Error  ');
+        }
+    }
 
     public function dashboard_dealerrequest()
     {
@@ -165,5 +185,15 @@ class ContactController extends Controller
     {
         $dealerrequest = DealerRequest::where('id', $id)->first();
         return view('dashboard.dealerrequest.show',compact('dealerrequest'));
+    }
+    // dashboard_dealerrequest_destroy 
+    public function dashboard_dealerrequest_destroy(Request $request, $id){
+        try {
+            $page = DealerRequest::find($id);
+            $page->delete();
+            return redirect()->route('dashboard.dealerrequest.index')->with('success', 'deleted successfully.');
+        }catch (\Exception $e) {
+            return redirect()->route('dashboard.dealerrequest.index')->with('error', 'Error ');
+        }
     }
 }

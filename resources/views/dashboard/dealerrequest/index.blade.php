@@ -18,10 +18,11 @@
                             <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.dealerrequest_dealername') }}</span></div>
                             <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.dealerrequest_email') }}</span></div>
                             <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.dealerrequest_phone') }}</span></div>
+                            <div class="nk-tb-col"><span class="sub-text"></span></div>
                         </div><!-- .nk-tb-item -->
                         @foreach ($dealerrequest as $data)
-                            <div class="nk-tb-item" onclick="window.location.href='{{ url('dashboard/dealerrequest', $data->id) }}'">
-                                <div class="nk-tb-col">
+                            <div class="nk-tb-item">
+                                <div class="nk-tb-col" onclick="window.location.href='{{ url('dashboard/dealerrequest', $data->id) }}'">
                                     <div class="user-card">
                                         <div class="user-name">
                                             <a href="{{ url('dashboard/dealerrequest', $data->id) }}">
@@ -32,15 +33,31 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="nk-tb-col">
+                                <div class="nk-tb-col" onclick="window.location.href='{{ url('dashboard/dealerrequest', $data->id) }}'">
                                     <span class="tb-lead">
                                         {{ $data->email  }}
                                     </span>
                                 </div>
-                                <div class="nk-tb-col">
+                                <div class="nk-tb-col" onclick="window.location.href='{{ url('dashboard/dealerrequest', $data->id) }}'">
                                     <span class="tb-lead">
                                         {{ $data->phone  }}
                                     </span>
+                                </div>
+                                <div class="nk-tb-col nk-tb-col-tools">
+                                    <ul class="nk-tb-actions gx-2">
+                                        <li>
+
+                                            <form action="{{ route('dashboard.dealerrequest.destroy', $data->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="#"
+                                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();"
+                                                    class="btn btn-sm btn-icon btn-trigger"><em
+                                                        class="icon ni ni-delete"></em></a>
+                                            </form>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div><!-- .nk-tb-item -->
                         @endforeach
