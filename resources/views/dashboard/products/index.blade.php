@@ -44,7 +44,7 @@
                                 <tr class="nk-tb-item nk-tb-head">
                                     <th class="nk-tb-col"><span class="sub-text">Name</span></th>
                                     <th class="nk-tb-col tb-col-mb"><span class="sub-text">Product code</span></th>
-                                    <div class="nk-tb-col tb-col-mb"> </div>
+                                    <th class="nk-tb-col tb-col-mb"><span class="sub-text">Action</span></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -76,7 +76,7 @@
                                             onclick="event.preventDefault();
                                         this.closest('form').submit();"
                                             class="btn btn-sm btn-icon btn-trigger"><em
-                                                class="icon ni ni-delete"></em></a>
+                                                class="icon ni ni-trash"></em> Delete</a>
                                     </form>
                                 </td>
                                 </tr><!-- .nk-tb-item  -->

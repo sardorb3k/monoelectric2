@@ -18,7 +18,7 @@
                             <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.contact_fullname') }}</span></div>
                             <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.contact_email') }}</span></div>
                             <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.contact_phone') }}</span></div>
-                            <div class="nk-tb-col nk-tb-col-tools text-end"> </div>
+                            <div class="nk-tb-col nk-tb-col-tools text-end"><span class="sub-text">Action</span></div>
                         </div><!-- .nk-tb-item -->
                         @foreach ($contact as $data)
                             <div class="nk-tb-item">
@@ -54,7 +54,7 @@
                                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();"
                                                     class="btn btn-sm btn-icon btn-trigger"><em
-                                                        class="icon ni ni-delete"></em></a>
+                                                        class="icon ni ni-trash"></em></a>
                                             </form>
                                         </li>
                                     </ul>

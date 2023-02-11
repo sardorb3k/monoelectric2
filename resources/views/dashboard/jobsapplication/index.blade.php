@@ -20,7 +20,7 @@
                             <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.jobs_lastname') }}</span></div>
                             <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.jobs_birthdate') }}</span></div>
                             <div class="nk-tb-col"><span class="sub-text">{{ __('dashboard.jobs_phone') }}</span></div>
-                            <div class="nk-tb-col nk-tb-col-tools text-end"> </div>
+                            <div class="nk-tb-col nk-tb-col-tools text-end"><span class="sub-text">Action</span></div>
                         </div><!-- .nk-tb-item -->
                         @foreach ($jobs as $data)
                             <div class="nk-tb-item">
@@ -65,8 +65,8 @@
                                                 <a href="#"
                                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();"
-                                                    class="btn btn-sm btn-icon btn-trigger"><em
-                                                        class="icon ni ni-delete"></em></a>
+                                                    class="btn btn-sm btn-icon"><em
+                                                        class="icon ni ni-trash"></em></a>
                                             </form>
                                         </li>
                                     </ul>

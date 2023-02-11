@@ -22,16 +22,16 @@ class ProfileController extends Controller
 
             // dd($request);
             // Validate request
-            $request->validate([
-                'firstname' => 'required',
-                'lastname' => 'required',
-                'phone' => 'required',
-                'update_action' => 'required',
-                'id' => 'required',
-            ]);
             // Get profile by id
             $student = User::findOrFail($request->id);
             if ($request->update_action == 'personal') {
+                $request->validate([
+                    'firstname' => 'required',
+                    'lastname' => 'required',
+                    'phone' => 'required',
+                    'update_action' => 'required',
+                    'id' => 'required',
+                ]);
                 // Update profile information
                 $student->update([
                     'firstname' => $request->firstname,
